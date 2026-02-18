@@ -1,0 +1,17 @@
+CREATE TABLE Author_Tbl(
+      Author_code Number(5) Primary Key,
+      Author_name Varchar2(20) Not null,
+      Contact_no Number(10)
+      );
+      INSERT INTO Author_Tbl Values(1,'RobinSharma',8800799224);
+      INSERT INTO Author_Tbl Values(2,'R.K.Narayan',9971935000);
+      INSERT INTO Author_Tbl Values(3,'Paulo Ceolho',1234567890);
+      
+  CREATE TABLE Book_Tbl(
+      ISBN Varchar2(10) Primary Key,
+      Book_title Varchar2(20) Not null,
+      Book_type Char(1),
+      Author_code Number(5) Not null,
+      FOREIGN KEY (Author_code) REFeRENCES Author_Tbl(Author_code),
+      Book_cost Number(8,2) Not null
+      );
